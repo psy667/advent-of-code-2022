@@ -1,17 +1,33 @@
+const val id = "01"
+
 fun main() {
+    fun getElvesWeights(input: List<String>): List<Int> {
+        return input
+            .joinToString("\n")
+            .split("\n\n".toRegex())
+            .map { it
+                .split("\n".toRegex())
+                .map(String::toInt)
+                .sum()
+            }
+    }
+
     fun part1(input: List<String>): Int {
-        return input.size
+        return getElvesWeights(input).max()
     }
 
     fun part2(input: List<String>): Int {
-        return input.size
+        return getElvesWeights(input)
+            .sortedDescending()
+            .take(3)
+            .sum()
     }
 
-    // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
-    check(part1(testInput) == 1)
+    val testInput = readInput("Day${id}_test")
+    check(part1(testInput) == 24000)
 
-    val input = readInput("Day01")
-    println(part1(input))
-    println(part2(input))
+    val input = readInput("Day${id}")
+    println("==== DAY ${id} ====")
+    println("Part 1: ${part1(input)}")
+    println("Part 2: ${part2(input)}")
 }
