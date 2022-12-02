@@ -1,6 +1,6 @@
-const val id = "01"
-
 fun main() {
+    val id = "01"
+
     fun getElvesWeights(input: List<String>): List<Int> {
         return input
             .joinToString("\n")
