@@ -11,3 +11,7 @@ fun readInput(name: String) = File("src", "$name.txt").readLines()
  * Converts string to md5 hash.
  */
 fun String.md5(): String = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteArray())).toString(16)
+
+
+fun <T> List<T>.rotate(n: Int) =
+    let { slice(n until size) + slice(0 until n) }

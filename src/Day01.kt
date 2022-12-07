@@ -4,9 +4,9 @@ fun main() {
     fun getElvesWeights(input: List<String>): List<Int> {
         return input
             .joinToString("\n")
-            .split("\n\n".toRegex())
+            .split("\n\n")
             .map { it
-                .split("\n".toRegex())
+                .split("\n")
                 .map(String::toInt)
                 .sum()
             }

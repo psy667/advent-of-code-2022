@@ -2,13 +2,13 @@ fun main() {
     val id = "X"
 
     fun part1(input: List<String>): Int {
-        return input.map(String::toInt).map {
+        return input.map {
             it
         }.sum()
     }
 
     fun part2(input: List<String>): Int {
-        return input.map(String::toInt).map {
+        return input.map {
             it
         }.sum()
     }
